@@ -8,9 +8,11 @@ using namespace std;
 int NumOfWords = 10;
 const int MaxWords = 1024;
 vector<string> Words;
+vector<int> Occurences;
 
 void main() {
 	Words.clear();
+	Occurences.clear();
 	
 	ofstream ofile;
 
@@ -29,20 +31,22 @@ void main() {
 			infile2.open("inputfile2.txt");
 			for (int x = 0; x < MaxWords; x++) {
 
-				string temp;
-				infile2 >> temp;
-				if (temp == Words[i]) {
+				string temp2;
+				infile2 >> temp2;
+				if (temp2 == Words[i]) {
 					numofOccurence++;
 				}
 				 
 			}
 			infile2.close();
-
-			ofile.open("outputfile.txt",ofstream::app);
-			ofile << Words[i] << " is found : " << numofOccurence << " number of times." << endl;
-			cout << Words[i] << " is found : " << numofOccurence << " number of times." << endl;
-			
+			Occurences.push_back(numofOccurence);
 		}
+	}
+
+	ofile.open("outputfile.txt");
+	for (int i = 0; i < NumOfWords; i++) {
+		ofile << Words[i] << " is found : " << Occurences[i] << " number of times." << endl;
+		cout << Words[i] << " is found : " << Occurences[i] << " number of times." << endl;
 	}
 	ofile.close();
 	infile1.close();

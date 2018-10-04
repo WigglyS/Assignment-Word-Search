@@ -1,2 +1,10 @@
 program is found : 3 number of times.
-program is found : 3 number of times.
+classes is found : 2 number of times.
+common is found : 1 number of times.
+enables is found : 3 number of times.
+specific is found : 0 number of times.
+maintainability is found : 0 number of times.
+Program is found : 1 number of times.
+programs is found : 1 number of times.
+programming is found : 1 number of times.
+programmer is found : 1 number of times.
